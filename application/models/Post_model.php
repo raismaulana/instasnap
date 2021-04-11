@@ -15,5 +15,13 @@ class Post_model extends CI_Model {
         return ($this->db->affected_rows() != 1) ? false : true;
 	}
 
+	public function get_all_post()
+	{
+		$this->db->select('*');
+		$this->db->from('post');
+		$this->db->join('user', 'post.user_idUser = user.iduser');
+		return $this->db->get()->result();
+	}
+
 
 }

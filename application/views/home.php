@@ -47,6 +47,34 @@
     <hr />
     <div class="container-fluid" id="main-container">
 
+    <?php foreach($result['posts'] as $row) { ?>
+    <div class="row justify-content-center" style="margin-bottom: 5px;">
+            <div class="card">
+                <div class="card mb-3">
+                    <div class="card-title-block">
+                        <h5 class="card-title" style="margin: 0px"><?php prints($row->username); ?></h5>
+                        <p class="card-text" style="margin: 0px"><small class="text-muted"><?php prints($row->date); ?></small></p>
+                        <p class="card-text"><?php prints($row->caption); ?></p>
+                    </div>
+                    <img class="card-img-top" src="<?= base_url($row->picture); ?>" alt="Card image cap">
+                    <div class="card-title-action">
+                        <p class="card-text" style="margin: 0px;"><small class="text-muted">Total like</small></p>
+                        <button type="button" class="btn btn-outline-danger btn-block" style="margin: 1px;">Like</button>
+                        <textarea rows="1" cols="1" class="form-control" placeholder="Write your comment here ..." maxlength="500"></textarea>
+                        <button type="button" class="btn btn-info btn-block">Comment</button>
+                    </div>
+                    <div class="card-body">
+                        <hr />
+                        <div class="comment">
+                            <h5 class="card-title" style="margin: 0px auto;">Username</h5>
+                            <p class="card-text">This is a comment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php } ?>
+<!--         
         <div class="row justify-content-center" style="margin-bottom: 5px;">
             <div class="card">
                 <div class="card mb-3">
@@ -55,7 +83,7 @@
                         <p class="card-text" style="margin: 0px"><small class="text-muted">Time</small></p>
                         <p class="card-text">Caption.</p>
                     </div>
-                    <img class="card-img-top" src="<?= base_url('assets/img/login-background.jpg'); ?>" alt="Card image cap">
+                    <img class="card-img-top" src="<?php //echo base_url('assets/img/login-background.jpg'); ?>" alt="Card image cap">
                     <div class="card-title-action">
                         <p class="card-text" style="margin: 0px;"><small class="text-muted">Total like</small></p>
                         <button type="button" class="btn btn-outline-danger btn-block" style="margin: 1px;">Like</button>
@@ -71,7 +99,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
 
     </div>

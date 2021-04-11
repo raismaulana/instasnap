@@ -17,10 +17,13 @@ class Home extends CI_Controller
             'title' => 'Home - Instasnap',
         ];
         if (is_guest()) {
+            //todo guest page
+            echo 'todo guest page';
         } else {
             $id_user = get_iduser();
             $result = array(
-                "userdata" => $this->user_model->select_id($id_user)
+                "userdata" => $this->user_model->select_id($id_user),
+                "posts" => $this->post_model->get_all_post(),
             );
             $context['result'] = $result;
             $this->load->view('home', $context);
@@ -56,7 +59,7 @@ class Home extends CI_Controller
             // die(print_r($data));
             $data = array(
                 'caption' => $this->input->post('caption'),
-                'picture' => substr($dir, 2).'/'.$file_name,
+                'picture' => substr($dir, 2).'/'.$this->upload->data('file_name'),
                 'date' => $date,
                 'user_iduser' => $id_user,
             );
