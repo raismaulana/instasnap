@@ -12,7 +12,7 @@ e.	Hak akses terhadap Post, Like, dan Komentar (on progress)
 ###################
 Install
 ###################
-a. Import instasnap.sql to mysql database with database name instaname
+a. Import instasnap.sql to mysql database with database name instasnap
 b. Put this app folder (make sure the name is instasnap) in XAMPP or other.
 c. Installation done, you can access it at localhost/instasnap/index.php/login
 d. create new account or try using existing account (username: tryit123, password tryit123)
