@@ -12,7 +12,7 @@ class Login extends CI_Controller {
 
 	public function index()
 	{
-        redirect_home();
+        redirect_home(); //redirect to home if user has session
         $context = [
             'title' => "Login - Instasnap",
         ];
